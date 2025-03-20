@@ -24,4 +24,6 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn clean install
+        run: |
+          cd backend
+          mvn clean install
