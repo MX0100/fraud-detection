@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import "./Dropzone.css";
 
 const Dropzone = ({ onFileParsed }: { onFileParsed: (data: any[]) => void }) => {
@@ -21,14 +22,15 @@ const Dropzone = ({ onFileParsed }: { onFileParsed: (data: any[]) => void }) => 
     };
 
     const parseACHFile = (fileContent: string) => {
-        const lines = fileContent.split("\n").map(line => line.trim());
-        return lines
-            .filter(line => line.startsWith("6"))
+        return fileContent
+            .split("\n")
+            .map(line => line.trim())
+            .filter(line => line.startsWith("6") && line.length >= 69) // 确保长度足够
             .map(line => ({
                 routingNumber: line.slice(3, 12),
                 accountNumber: line.slice(12, 29).trim(),
-                amount: parseFloat(line.slice(29, 39)) / 100,
-                individualName: line.slice(39, 54).trim(),
+                amount: isNaN(parseFloat(line.slice(29, 39))) ? 0 : parseFloat(line.slice(29, 39)) / 100,
+                individualName: line.slice(39, 54).padEnd(15, " ").trim(),
                 traceNumber: line.slice(54, 69).trim()
             }));
     };
