@@ -1,0 +1,22 @@
+/* TransactionTable.css */
+.transaction-table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #282828;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #333;
+}

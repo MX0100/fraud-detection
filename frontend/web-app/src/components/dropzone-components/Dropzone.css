@@ -1,0 +1,38 @@
+/* Dropzone.css */
+.dropzone-container {
+    padding: 10px;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 500px;
+    margin-bottom: 15px;
+}
+
+.dropzone-container:hover {
+    background-color: #292929;
+}
+
+input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.file-label {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
+
+.uploaded-file {
+    margin-top: 10px;
+    color: #ccc;
+}
