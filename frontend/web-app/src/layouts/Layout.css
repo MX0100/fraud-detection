@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 2rem 180px; /* 顶部预留导航栏，底部预留 footer 空间 */
+  box-sizing: border-box;
+  overflow-x: hidden; /* 防止水平溢出 */
+}
+
+/* 确保导航栏和页脚正确对齐 */
+nav,
+footer {
+  width: 100%;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}

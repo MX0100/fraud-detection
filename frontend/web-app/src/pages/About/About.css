@@ -1,0 +1,73 @@
+/* src/pages/AboutPage.css */
+
+.about-hero {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  text-align: center;
+  padding: 60px 20px 60px;
+  margin-top: 100px;
+  transition: opacity 1s ease;
+  opacity: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.about-hero.fade-in {
+  opacity: 1;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  box-sizing: border-box;
+}
+
+.about-content.slide-up {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about-section {
+  margin-bottom: 60px;
+  padding: 40px;
+  border-radius: 15px;
+  background: #f7f7f7;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-section ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.about-section.alt {
+  background: #e0e0e0;
+}

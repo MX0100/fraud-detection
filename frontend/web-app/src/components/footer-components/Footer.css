@@ -1,6 +1,7 @@
 .footer {
+    all: unset;
     display: flex;
-    justify-content: flex-end; /* Aligns content to the right */
+    justify-content: center !important;; /* Aligns content to the right */
     align-items: center;
     padding: 10px 20px;
     background-color: #000; /* Dark background */

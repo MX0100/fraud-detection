@@ -1,4 +1,4 @@
-package com.lucas.frauddetection;
+package com.lucas.frauddetection.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -28,4 +28,10 @@ public class Transaction implements Serializable {
 
     @JsonProperty("timestamp")
     private LocalDateTime timestamp;
-}
+
+    @JsonProperty("isFraudulent")
+    private Boolean isFraudulent;
+    
+    @JsonProperty("isSuspicious")
+    private Boolean isSuspicious;
+} 

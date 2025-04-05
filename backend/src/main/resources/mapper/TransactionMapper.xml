@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lucas.frauddetection.mapper.TransactionMapper">
+
+    <insert id="insertTransaction">
+        INSERT INTO transactions (
+            transaction_id,
+            account_number,
+            amount,
+            currency,
+            timestamp,
+            is_fraudulent,
+            is_suspicious
+        ) VALUES (
+            #{transaction.transactionId},
+            #{transaction.accountNumber},
+            #{transaction.amount},
+            #{transaction.currency},
+            #{transaction.timestamp},
+            #{transaction.isFraudulent},
+            #{transaction.isSuspicious}
+        )
+    </insert>
+    
+    <select id="findSuspiciousTransactions" resultType="com.lucas.frauddetection.entity.Transaction">
+        SELECT 
+            transaction_id as transactionId,
+            account_number as accountNumber,
+            amount,
+            currency,
+            timestamp,
+            is_fraudulent as isFraudulent,
+            is_suspicious as isSuspicious
+        FROM transactions 
+        WHERE is_suspicious = true
+        ORDER BY timestamp DESC
+    </select>
+    
+    <update id="updateFraudStatus">
+        UPDATE transactions 
+        SET is_fraudulent = #{isFraudulent}
+        WHERE transaction_id = #{transactionId}
+    </update>
+
+</mapper>

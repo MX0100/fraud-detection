@@ -1,4 +1,4 @@
-package com.lucas.frauddetection;
+package com.lucas.frauddetection.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
@@ -41,6 +41,5 @@ public class RabbitMQConfig {
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(jsonMessageConverter());
         return factory;
-}
-
-}
+    }
+} 
